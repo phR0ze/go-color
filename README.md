@@ -1,8 +1,6 @@
 # Color
 Fork from https://github.com/fatih/color with dependencies dropped for efficiency on Nix systems
 
-[![GoDoc](https://godoc.org/github.com/fatih/color?status.svg)](https://godoc.org/github.com/fatih/color) [![Build Status](https://img.shields.io/travis/fatih/color.svg?style=flat-square)](https://travis-ci.org/fatih/color)
-
 Color lets you use colorized outputs in terms of [ANSI Escape
 Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Go (Golang). It
 has support for Windows too! The API can be used in several ways, pick one that
@@ -11,7 +9,6 @@ suits you.
 ![Color](docs/images/ansi_colors.png)
 
 ## Install
-
 ```bash
 go get github.com/phR0ze/go-color
 ```
