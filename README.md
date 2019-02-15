@@ -1,10 +1,5 @@
-# Archived project. No maintenance. 
-
-This project is not maintained anymore and is archived. Feel free to fork and
-make your own changes if needed. For more detail read my blog post: [Taking an indefinite sabbatical from my projects](https://arslan.io/2018/10/09/taking-an-indefinite-sabbatical-from-my-projects/)
-
-Thanks to everyone for their valuable feedback and contributions.
-
+# Color
+Fork from https://github.com/fatih/color with dependencies dropped for efficiency on Nix systems
 
 # Color [![GoDoc](https://godoc.org/github.com/fatih/color?status.svg)](https://godoc.org/github.com/fatih/color) [![Build Status](https://img.shields.io/travis/fatih/color.svg?style=flat-square)](https://travis-ci.org/fatih/color)
 
@@ -13,23 +8,17 @@ Codes](http://en.wikipedia.org/wiki/ANSI_escape_code#Colors) in Go (Golang). It
 has support for Windows too! The API can be used in several ways, pick one that
 suits you.
 
-
-![Color](https://i.imgur.com/c1JI0lA.png)
-
+![Color](docs/images/ansi_colors.png)
 
 ## Install
 
 ```bash
-go get github.com/fatih/color
+go get github.com/phR0ze/go-color
 ```
-
-Note that the `vendor` folder is here for stability. Remove the folder if you
-already have the dependencies in your GOPATH.
 
 ## Examples
 
 ### Standard colors
-
 ```go
 // Print with default helper functions
 color.Cyan("Prints text in cyan.")
@@ -40,11 +29,9 @@ color.Blue("Prints %s in blue.", "text")
 // These are using the default foreground colors
 color.Red("We have red")
 color.Magenta("And many others ..")
-
 ```
 
 ### Mix and reuse colors
-
 ```go
 // Create a new color object
 c := color.New(color.FgCyan).Add(color.Underline)
@@ -65,7 +52,6 @@ whiteBackground.Println("Red text with white background.")
 ```
 
 ### Use your own output (io.Writer)
-
 ```go
 // Use your own io.Writer output
 color.New(color.FgBlue).Fprintln(myWriter, "blue color!")
@@ -75,7 +61,6 @@ blue.Fprint(writer, "This will print text in blue.")
 ```
 
 ### Custom print functions (PrintFunc)
-
 ```go
 // Create a custom print function for convenience
 red := color.New(color.FgRed).PrintfFunc()
@@ -88,7 +73,6 @@ notice("Don't forget this...")
 ```
 
 ### Custom fprint functions (FprintFunc)
-
 ```go
 blue := color.New(FgBlue).FprintfFunc()
 blue(myWriter, "important notice: %s", stars)
@@ -99,7 +83,6 @@ success(myWriter, "Don't forget this...")
 ```
 
 ### Insert into noncolor strings (SprintFunc)
-
 ```go
 // Create SprintXxx functions to mix strings with other non-colorized strings:
 yellow := color.New(color.FgYellow).SprintFunc()
@@ -118,7 +101,6 @@ fmt.Fprintf(color.Output, "Windows support: %s", color.GreenString("PASS"))
 ```
 
 ### Plug into existing code
-
 ```go
 // Use handy standard colors
 color.Set(color.FgYellow)
@@ -136,7 +118,6 @@ fmt.Println("All text will now be bold magenta.")
 ```
 
 ### Disable/Enable color
- 
 There might be a case where you want to explicitly disable/enable color output. the 
 `go-isatty` package will automatically disable color output for non-tty output streams 
 (for example if the output were piped directly to `less`)
@@ -168,18 +149,8 @@ c.EnableColor()
 c.Println("This prints again cyan...")
 ```
 
-## Todo
-
-* Save/Return previous values
-* Evaluate fmt.Formatter interface
-
-
 ## Credits
-
  * [Fatih Arslan](https://github.com/fatih)
- * Windows support via @mattn: [colorable](https://github.com/mattn/go-colorable)
 
 ## License
-
 The MIT License (MIT) - see [`LICENSE.md`](https://github.com/fatih/color/blob/master/LICENSE.md) for more details
-
